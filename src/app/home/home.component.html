@@ -1,54 +1,8 @@
-<div class="container">
-      <div class="form-group">
-        <label for="firstName">First Name:</label>
-        <input [(ngModel)]="studentFormData.firstName" type="text" class="form-control" id="firstName">
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input [(ngModel)]="studentFormData.email" type="text" class="form-control" id="email">
-      </div>
-      <div class="form-group">
-        <label for="address">Address:</label>
-        <input [(ngModel)]="studentFormData.address" type="text" class="form-control" id="address">
-      </div>
-      <!-- <div class="form-group">
-        <label for="result">Result:</label>
-        <input [(ngModel)]="studentFormData.result" type="text" class="form-control" id="result">
-      </div> -->
-      <div class="form-group">
-        <label for="marks">Marks:</label>
-        <input [(ngModel)]="studentFormData.marks" type="number" class="form-control" id="marks">
-      </div>
-      <button type="submit" (click)="onSubmit(studentFormData)" class="btn btn-primary">Submit</button>
-</div>
+<app-form></app-form>
 
-<div *ngIf="studentList.length > 0" class="container">
-    <h3>Student List</h3>
-    <table class="table">
-        <thead>
-          <tr>
-            <th>Firstname</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Marks</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let student of studentList">
-            <td>{{student.firstName}}</td>
-            <td>{{student.email}}</td>
-            <td>{{student.address}}</td>
-            <td [ngStyle]="{color: student.marks >= 60 ? 'green' :
-            student.marks < 60 && student.marks > 50 ? 'yellow'
-            : 'red'}">
-                {{student.marks > 60 ? 'First':
-                 student.marks < 60 && student.marks > 50 ? 'Secound' :
-                'Fail'}} 
-           </td>
-            <!-- <td [ngStyle]="{color: student.result === 'pass' ? 'green' : 'red'}">
-                 {{student.result}} 
-            </td> -->
-          </tr>
-        </tbody>
-      </table>
-</div>
+<app-table></app-table>
+
+<!-- <app-form
+(studentListObj)="onSubmit($event)"></app-form>
+
+<app-table [studentList]="studentList"></app-table> -->

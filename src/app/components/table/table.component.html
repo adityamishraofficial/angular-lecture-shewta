@@ -1,0 +1,32 @@
+
+
+<div *ngIf="dataService.studentListObj.length > 0" class="container">
+    <h3>Student List</h3>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of dataService.studentListObj">
+            <td>{{student.firstName}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.address}}</td>
+            <td [ngStyle]="{color: student.marks >= 60 ? 'green' :
+            student.marks < 60 && student.marks > 50 ? 'yellow'
+            : 'red'}">
+                {{student.marks > 60 ? 'First':
+                 student.marks < 60 && student.marks > 50 ? 'Secound' :
+                'Fail'}} 
+           </td>
+            <!-- <td [ngStyle]="{color: student.result === 'pass' ? 'green' : 'red'}">
+                 {{student.result}} 
+            </td> -->
+          </tr>
+        </tbody>
+      </table>
+</div>

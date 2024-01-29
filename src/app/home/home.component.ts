@@ -7,20 +7,9 @@ import { Student } from '../model/student';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  studentFormData: Student = {
-    firstName: '',
-    email: '',
-    address: '',
-    result: '',
-    marks: 0
-  }
-
   studentList: Student[] = [];
 
-  constructor() { }
-
-  onSubmit(studentData: Student){
-    this.studentList.push({...studentData})
+  onSubmit(studentList: Student[]){
+    this.studentList = [...studentList];
   }
-
 }
