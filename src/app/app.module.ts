@@ -10,6 +10,9 @@ import { TableComponent } from './components/table/table.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PostComponent } from './components/post/post.component';
 import { CategoryComponent } from './components/category/category.component';
+import { MycomponentComponent } from './mycomponent/mycomponent.component';
+import { UsersComponent } from './components/users/users.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,13 +22,16 @@ import { CategoryComponent } from './components/category/category.component';
     TableComponent,
     NavbarComponent,
     PostComponent,
-    CategoryComponent
+    CategoryComponent,
+    MycomponentComponent,
+    UsersComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

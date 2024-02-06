@@ -5,8 +5,10 @@
       </div>
       <ul class="nav navbar-nav">
         <li class="active"><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/post">Post</a></li>
+        <li><a [routerLink]="['/post', myID]">Post</a></li>
         <li><a routerLink="/category">Category</a></li>
+        <li><a routerLink="/users">Users</a></li>
+
       
       </ul>
     </div>

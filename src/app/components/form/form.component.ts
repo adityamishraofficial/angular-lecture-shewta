@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Student } from 'src/app/model/student';
 import { DataService } from 'src/app/service/data.service';
+import { UserHttpServiceService } from 'src/app/service/user-http-service.service';
 
 @Component({
   selector: 'app-form',
@@ -18,7 +19,8 @@ export class FormComponent implements OnInit{
   //   result: '',
   //   marks: 0
   // }
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,
+    private userHttpService: UserHttpServiceService) {}
   ngOnInit(): void {
     this.studentForm = this.fb.group({
       firstName: ['', Validators.required],
@@ -43,9 +45,9 @@ export class FormComponent implements OnInit{
     }
     // console.log('Form is valid')
     console.log('Forms Value', this.studentForm.value)
-    // this.dataService.studentListObj = studentData
-    // this.dataService.studentList.push({...studentData})
-    // this.studentListObj.emit(this.studentList)
+   this.userHttpService.saveUser(this.studentForm.value).subscribe((res: any) => {
+    alert('User data has been saved')
+   })
   }
 
   onReset(){
