@@ -23,4 +23,8 @@ export class UserHttpServiceService {
     const path = 'https://reqres.in/api/users';
     return this.http.post(path, userData)
   }
+
+  login(userPayload: any) {
+    return this.http.post('https://dummyjson.com/auth/login', userPayload)
+  } 
 }

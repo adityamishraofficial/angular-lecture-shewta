@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="form-group">
+        <label for="username">Username :</label>
+        <input [(ngModel)]="user.username" type="username" class="form-control" id="username">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input [(ngModel)]="user.password" type="password" class="form-control" id="password">
+      </div>
+      <p *ngIf="errMsg" style="color: red">{{errMsg}}</p>
+      <button type="submit" (click)="onSubmit()" class="btn btn-default">Submit</button>
+  
+</div>
